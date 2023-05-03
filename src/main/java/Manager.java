@@ -2,19 +2,20 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 
-
 public class Manager {
     private Repository repository;
-    public Manager (Repository repository){
+
+    public Manager(Repository repository) {
         this.repository = repository;
     }
 
 
-    public void  add(Ticket product){
+    public void add(Ticket product) {
         repository.add(product);
 
     }
-    public Ticket[] findAll (String from, String to) {
+
+    public Ticket[] findAll(String from, String to) {
         Ticket[] result = new Ticket[0];
         for (Ticket ticket : repository.findAll()) {
             if (matches(ticket, from, to)) {
@@ -31,13 +32,14 @@ public class Manager {
 
         return result;
     }
-    public boolean matches (Ticket ticket, String from, String to){
-      if(ticket.getFrom().equals(from)){
-          if(ticket.getTo().equals(to)){
-              return true;
-          }
 
-      }
-return false;
+    public boolean matches(Ticket ticket, String from, String to) {
+        if (ticket.getFrom().equals(from)) {
+            if (ticket.getTo().equals(to)) {
+                return true;
+            }
+
+        }
+        return false;
     }
-    }
+}

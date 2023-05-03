@@ -1,4 +1,4 @@
-public class Ticket implements Comparable<Ticket>{
+public class Ticket implements Comparable<Ticket> {
     private int id;
     private int price;
     private String from;
@@ -13,9 +13,6 @@ public class Ticket implements Comparable<Ticket>{
         this.time = time;
     }
 
-    public int getId() {
-        return id;
-    }
 
     public int getPrice() {
         return price;
@@ -27,10 +24,6 @@ public class Ticket implements Comparable<Ticket>{
 
     public String getTo() {
         return to;
-    }
-
-    public int getTime() {
-        return time;
     }
 
     @Override
